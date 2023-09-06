@@ -1,12 +1,12 @@
 import 'package:weather_app/domain/entities/weather.dart';
-import 'package:weather_app/domain/repository/weather_repository.dart';
+import 'package:weather_app/domain/repository/base_weather_repository.dart';
 
 class GetWeatherByCountryName {
-  final WeatherRepository weatherRepository;
+  final BaseWeatherRepository baseWeatherRepository;
 
-  GetWeatherByCountryName(this.weatherRepository);
+  GetWeatherByCountryName(this.baseWeatherRepository);
 
   Future<Weather> execute(String countryName) async{
-    return await weatherRepository.getWeatherByCountryName(countryName);
+    return await baseWeatherRepository.getWeatherByCountryName(countryName);
   }
 }
